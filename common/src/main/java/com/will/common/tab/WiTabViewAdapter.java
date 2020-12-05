@@ -6,16 +6,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.will.ui.tab.bottom.HiTabBottomInfo;
+import com.will.ui.tab.bottom.WiTabBottomInfo;
 
 import java.util.List;
 
 public class WiTabViewAdapter {
-    private List<HiTabBottomInfo<?>> mInfoList;
+    private List<WiTabBottomInfo<?>> mInfoList;
     private Fragment mCurFragment;
     private FragmentManager mFragmentManager;
 
-    public WiTabViewAdapter(FragmentManager fragmentManager, List<HiTabBottomInfo<?>> infoList) {
+    public WiTabViewAdapter(FragmentManager fragmentManager, List<WiTabBottomInfo<?>> infoList) {
         this.mInfoList = infoList;
         this.mFragmentManager = fragmentManager;
     }

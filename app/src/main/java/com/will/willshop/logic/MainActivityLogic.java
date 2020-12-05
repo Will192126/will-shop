@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.will.common.tab.WiFragmentTabView;
 import com.will.common.tab.WiTabViewAdapter;
-import com.will.ui.tab.bottom.HiTabBottomInfo;
+import com.will.ui.tab.bottom.WiTabBottomInfo;
 import com.will.ui.tab.bottom.WiTabBottomLayout;
 import com.will.ui.tab.common.IHiTabLayout;
 import com.will.willshop.R;
@@ -28,7 +28,7 @@ import java.util.List;
 public class MainActivityLogic {
     private WiFragmentTabView mFragmentTabView;
     private WiTabBottomLayout mTabBottomLayout;
-    private List<HiTabBottomInfo<?>> mInfoList;
+    private List<WiTabBottomInfo<?>> mInfoList;
     private ActivityProvider mActivityProvider;
     private final static String SAVED_CURRENT_ID = "SAVED_CURRENT_ID";
     private int mCurrentItemIndex;
@@ -55,7 +55,7 @@ public class MainActivityLogic {
         return mTabBottomLayout;
     }
 
-    public List<HiTabBottomInfo<?>> getInfoList() {
+    public List<WiTabBottomInfo<?>> getInfoList() {
         return mInfoList;
     }
 
@@ -65,7 +65,7 @@ public class MainActivityLogic {
         mInfoList = new ArrayList<>();
         int defaultColor = mActivityProvider.getResources().getColor(R.color.tabBottomDefaultColor);
         int tintColor = mActivityProvider.getResources().getColor(R.color.tabBottomTintColor);
-        HiTabBottomInfo infoHome = new HiTabBottomInfo<Integer>(
+        WiTabBottomInfo infoHome = new WiTabBottomInfo<Integer>(
                 "首页",
                 "fonts/iconfont.ttf",
                 mActivityProvider.getString(R.string.if_home),
@@ -74,7 +74,7 @@ public class MainActivityLogic {
                 tintColor
         );
         infoHome.fragment = HomeFragment.class;
-        HiTabBottomInfo infoFavorite = new HiTabBottomInfo<Integer>(
+        WiTabBottomInfo infoFavorite = new WiTabBottomInfo<Integer>(
                 "收藏",
                 "fonts/iconfont.ttf",
                 mActivityProvider.getString(R.string.if_favorite),
@@ -83,7 +83,7 @@ public class MainActivityLogic {
                 tintColor
         );
         infoFavorite.fragment = FavoriteFragment.class;
-        HiTabBottomInfo infoCategory = new HiTabBottomInfo<Integer>(
+        WiTabBottomInfo infoCategory = new WiTabBottomInfo<Integer>(
                 "分类",
                 "fonts/iconfont.ttf",
                 mActivityProvider.getString(R.string.if_category),
@@ -92,7 +92,7 @@ public class MainActivityLogic {
                 tintColor
         );
         infoCategory.fragment = CategoryFragment.class;
-        HiTabBottomInfo infoRecommend = new HiTabBottomInfo<Integer>(
+        WiTabBottomInfo infoRecommend = new WiTabBottomInfo<Integer>(
                 "推荐",
                 "fonts/iconfont.ttf",
                 mActivityProvider.getString(R.string.if_recommend),
@@ -101,7 +101,7 @@ public class MainActivityLogic {
                 tintColor
         );
         infoRecommend.fragment = RecommendFragment.class;
-        HiTabBottomInfo infoProfile = new HiTabBottomInfo<Integer>(
+        WiTabBottomInfo infoProfile = new WiTabBottomInfo<Integer>(
                 "我的",
                 "fonts/iconfont.ttf",
                 mActivityProvider.getString(R.string.if_profile),
@@ -121,9 +121,9 @@ public class MainActivityLogic {
 
         initFragmentTabView();
 
-        mTabBottomLayout.addTabSelectedChangeListener(new IHiTabLayout.OnTabSelectedListener<HiTabBottomInfo<?>>() {
+        mTabBottomLayout.addTabSelectedChangeListener(new IHiTabLayout.OnTabSelectedListener<WiTabBottomInfo<?>>() {
             @Override
-            public void onTabSelectedChange(int index, @Nullable HiTabBottomInfo<?> preInfo, @NonNull HiTabBottomInfo<?> nextInfo) {
+            public void onTabSelectedChange(int index, @Nullable WiTabBottomInfo<?> preInfo, @NonNull WiTabBottomInfo<?> nextInfo) {
                 mFragmentTabView.setCurrentPosition(index);
                 mCurrentItemIndex = index;
             }
